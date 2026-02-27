@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Soulon</string>
+    <string name="store_memory">存储记忆</string>
+    <string name="retrieve_memory">检索记忆</string>
+    <string name="auth_required">需要身份验证</string>
+    <string name="auth_prompt">请使用指纹或双击电源键确认</string>
+    <string name="memory_stored">记忆已安全存储</string>
+    <string name="memory_retrieved">记忆已检索</string>
+    <string name="error_auth_failed">身份验证失败</string>
+    <string name="error_storage_failed">存储失败</string>
+    <string name="test_memory_content">这是一条测试记忆，包含敏感信息。时间戳：%s</string>
+    <string name="no_memories">暂无存储的记忆</string>
+    <string name="wallet_not_found">未找到 Solana 钱包</string>
+</resources>

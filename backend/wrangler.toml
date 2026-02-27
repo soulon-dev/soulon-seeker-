@@ -1,0 +1,106 @@
+# Memory AI Backend - Cloudflare Workers Configuration
+# https://developers.cloudflare.com/workers/
+
+name = "memory-ai-backend"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+# 开发环境
+[env.dev]
+vars = { ENVIRONMENT = "development", SOLANA_CLUSTER = "devnet", SOLANA_RPC_URL = "https://api.devnet.solana.com", SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw", GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC", ATTESTATION_VALIDITY_HOURS = "24", CF_ACCESS_TEAM_NAME = "soulon", CORS_ALLOWED_ORIGINS = "", ADMIN_CORS_ALLOWED_ORIGINS = "https://a9f3k2p7x1z8-admin.soulon.top" }
+
+[[env.dev.kv_namespaces]]
+binding = "KV"
+id = "c458c798497a494f9e64f6ab25457d3c"
+
+[[env.dev.d1_databases]]
+binding = "DB"
+database_name = "soulon"
+database_id = "cacce054-7de3-4aeb-8617-f98a5b0bf5fa"
+
+# 生产环境
+[env.production]
+vars = { ENVIRONMENT = "production", SOLANA_CLUSTER = "mainnet-beta", SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw", GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC", ATTESTATION_VALIDITY_HOURS = "24", CF_ACCESS_TEAM_NAME = "soulon", CORS_ALLOWED_ORIGINS = "", ADMIN_CORS_ALLOWED_ORIGINS = "https://a9f3k2p7x1z8-admin.soulon.top" }
+routes = ["api.soulon.top/*", "privacy.soulon.top/*"]
+
+[[env.production.kv_namespaces]]
+binding = "KV"
+id = "c458c798497a494f9e64f6ab25457d3c"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "soulon"
+database_id = "cacce054-7de3-4aeb-8617-f98a5b0bf5fa"
+
+[[env.production.r2_buckets]]
+binding = "SHIP_METADATA"
+bucket_name = "seeker-ship-metadata"
+
+# ============================================
+# KV 命名空间
+# ============================================
+# 创建命令:
+# wrangler kv:namespace create "CHALLENGES"
+# wrangler kv:namespace create "SESSIONS"
+# wrangler kv:namespace create "KV"
+
+# [[kv_namespaces]]
+# binding = "CHALLENGES"
+# id = "your-challenges-kv-id"
+
+# [[kv_namespaces]]
+# binding = "SESSIONS"
+# id = "your-sessions-kv-id"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "c458c798497a494f9e64f6ab25457d3c"
+
+# ============================================
+# D1 数据库
+# ============================================
+# 创建命令:
+# wrangler d1 create memory-ai-db
+# wrangler d1 execute memory-ai-db --file=./schema.sql
+
+[[d1_databases]]
+binding = "DB"
+database_name = "soulon"
+database_id = "cacce054-7de3-4aeb-8617-f98a5b0bf5fa"
+
+# ============================================
+# R2 存储桶
+# ============================================
+# 创建命令:
+# wrangler r2 bucket create memory-ai-exports
+
+# [[r2_buckets]]
+# binding = "R2"
+# bucket_name = "memory-ai-exports"
+
+# ============================================
+# 环境变量
+# ============================================
+# 敏感信息通过 wrangler secret 设置:
+# wrangler secret put SOLANA_RPC_URL
+# wrangler secret put JWT_SECRET
+# wrangler secret put CF_ACCESS_AUD
+
+[vars]
+ENVIRONMENT = "production"
+SOLANA_CLUSTER = "mainnet-beta"
+SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw"
+GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC"
+ATTESTATION_VALIDITY_HOURS = "24"
+CF_ACCESS_TEAM_NAME = "soulon"
+CORS_ALLOWED_ORIGINS = ""
+ADMIN_CORS_ALLOWED_ORIGINS = "https://a9f3k2p7x1z8-admin.soulon.top"
+
+# ============================================
+# 定时任务 (Cron Triggers)
+# ============================================
+# 自动续费扣款检查 - 每小时执行
+[triggers]
+crons = ["0 * * * *"]  # 每小时整点执行
