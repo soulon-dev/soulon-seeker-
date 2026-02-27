@@ -19,6 +19,7 @@ keystore.properties
 # Android
 **/build/
 .gradle/
+app/google-services.json
 
 # Node
 **/node_modules/
