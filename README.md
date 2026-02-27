@@ -29,7 +29,7 @@ Commands:
 
 ### Notes
 
-- `app/google-services.json` is included for Firebase configuration. Treat it as configuration data and apply restrictions in the Firebase console as needed.
+- Firebase config is not committed. Copy `app/google-services.json.example` to `app/google-services.json` if you want to enable Firebase features locally.
 - Release builds enable R8/minification. Keep rules are included in `app/proguard-rules.pro` to avoid breaking JSON parsing during uploads.
 
 ## Backend (Cloudflare Workers)
