@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 主题色定义 -->
+    <color name="splash_background">#0A0A0F</color>
+    
+    <style name="Theme.Soulon" parent="android:Theme.Material.NoActionBar">
+        <!-- 状态栏颜色 -->
+        <item name="android:statusBarColor">@android:color/black</item>
+        <!-- 状态栏图标颜色为白色（深色主题） -->
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- 导航栏颜色 -->
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+    
+    <!-- 启动画面主题 - Android 12+ Splash Screen API -->
+    <style name="Theme.Soulon.Splash" parent="Theme.Soulon">
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">@color/splash_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="31">@drawable/ic_splash_logo</item>
+        <item name="android:windowSplashScreenIconBackgroundColor" tools:targetApi="31">@color/splash_background</item>
+    </style>
+</resources>

@@ -1,0 +1,38 @@
+.DS_Store
+
+local.properties
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+keystore.properties
+*.iml
+**/.cxx/
+
+# Logs
+*.log
+
+# Android
+**/build/
+.gradle/
+
+# Node
+**/node_modules/
+**/dist/
+
+# Cloudflare Wrangler
+**/.wrangler/
+.wrangler_home/
+
+# Rust/Anchor
+target/
+**/target/
+**/.cargo/
+
+# IDE
+.idea/
+.vscode/

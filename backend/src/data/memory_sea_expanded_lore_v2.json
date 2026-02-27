@@ -1,0 +1,164 @@
+
+{
+  "meta": {
+    "version": "2.0",
+    "title": "Memory Sea Expanded Universe Bible",
+    "target_hours": "1000+",
+    "author": "Echo Architect"
+  },
+  "timeline": [
+    {
+      "era": "Post-Glitch",
+      "year": "AE 55",
+      "title": "Echo Rebellion",
+      "description": "The first organized uprising of Echo Pilots against the Admin Remnant.",
+      "mechanic_unlock": "Custom Fleets, Echo Corps",
+      "variants_count": 5
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 58",
+      "title": "Infinite Hallway Network",
+      "description": "The 'Infinite Hallway' glitch stabilizes into a traversable fast-travel network.",
+      "mechanic_unlock": "Fast Travel, Stabilized Glitch Matter",
+      "variants_count": 3
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 62",
+      "title": "Poetry Code Decryption",
+      "description": "Architect fragments reunite. 'Poetry Code' puzzles begin appearing in dungeons.",
+      "mechanic_unlock": "Poetry Puzzle, Custom Modules",
+      "variants_count": 10
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 65",
+      "title": "Ghost Fleet 2150",
+      "description": "A fleet from the pre-collapse era emerges from a wormhole.",
+      "mechanic_unlock": "PvE Raid, Time-Displaced Loot",
+      "variants_count": 4
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 70",
+      "title": "Void Nomad Trade Network",
+      "description": "The Void Nomads establish permanent trade hubs in deep space.",
+      "mechanic_unlock": "Universal Credit Economy",
+      "variants_count": 2
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 75",
+      "title": "Architect Leak",
+      "description": "Source code leaks reveal the universe is a nested simulation.",
+      "mechanic_unlock": "Reality Buffs",
+      "variants_count": 8
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 85",
+      "title": "First Memory Storm",
+      "description": "Global weather event. 'Memory Storms' rewrite sector biomes temporarily.",
+      "mechanic_unlock": "Dynamic Weather, High Risk Zones",
+      "variants_count": 20
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 88",
+      "title": "Second Merge",
+      "description": "Physical objects begin pixelating on a massive scale.",
+      "mechanic_unlock": "Map Expansion (1000+ Sectors)",
+      "variants_count": 1
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 95",
+      "title": "Hive Awakening",
+      "description": "Glitch Mites evolve into a hive mind.",
+      "mechanic_unlock": "Dynamic Bosses",
+      "variants_count": 6
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 100",
+      "title": "Subject Zero Returns",
+      "description": "The first uploaded mind wakes up.",
+      "mechanic_unlock": "Multi-Ending Branch",
+      "variants_count": 3
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 110",
+      "title": "Echo Renaissance",
+      "description": "Players gain the ability to 'merge' consciousness.",
+      "mechanic_unlock": "Co-op Piloting, Base Building",
+      "variants_count": 2
+    },
+    {
+      "era": "Post-Glitch",
+      "year": "AE 125",
+      "title": "The Final Signal",
+      "description": "The countdown reaches zero. The season ends.",
+      "mechanic_unlock": "Season Reset, New Seed",
+      "variants_count": 1
+    }
+  ],
+  "factions": [
+    {
+      "id": "fac_vanguard",
+      "name": "The Vanguard",
+      "type": "NPC",
+      "alignment": "Lawful",
+      "description": "Military order dedicated to protecting the 'Status Quo'."
+    },
+    {
+      "id": "fac_glitch_cult",
+      "name": "Children of the Glitch",
+      "type": "NPC",
+      "alignment": "Chaotic",
+      "description": "Believes bugs are features. Worshippers of entropy."
+    },
+    {
+      "id": "fac_nomads",
+      "name": "Void Nomads",
+      "type": "NPC",
+      "alignment": "Neutral",
+      "description": "Traders who live in the spaces between sectors."
+    },
+    {
+      "id": "fac_weavers",
+      "name": "Shard Weavers",
+      "type": "NPC",
+      "alignment": "Neutral",
+      "description": "Artisans who forge equipment from stabilized glitch matter."
+    },
+    {
+      "id": "fac_heretics",
+      "name": "Reset Heretics",
+      "type": "NPC",
+      "alignment": "Chaotic",
+      "description": "Radicals who want to force a system reset to purge corruption."
+    },
+    {
+      "id": "fac_cartel",
+      "name": "Phantom Cartel 2.0",
+      "type": "NPC",
+      "alignment": "Chaotic",
+      "description": "The evolution of the Neon Phantom's network. Controls the black market."
+    },
+    {
+      "id": "fac_archivists",
+      "name": "The Library",
+      "type": "NPC",
+      "alignment": "Lawful",
+      "description": "Keepers of the old world data."
+    }
+  ],
+  "proc_gen_rules": {
+    "algorithm": "Stellar Forge + TAPIR",
+    "seed_sources": ["Core Lore", "Player Actions", "Season ID"],
+    "entity_templates": 250,
+    "sector_capacity": "Infinite (Chunk-based)"
+  }
+}
