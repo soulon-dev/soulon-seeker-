@@ -21,6 +21,7 @@ jobs:
           cache-dependency-path: backend/package-lock.json
       - run: npm ci
       - run: npm test
+      - run: node -e "const fs=require('fs');const sha=process.env.GITHUB_SHA||'';const pkg=require('./package.json');const ver=String(pkg.version||'0.0.0');let s=fs.readFileSync('wrangler.toml','utf8');s=s.replace(/GIT_SHA\\s*=\\s*\"[^\"]*\"/g,`GIT_SHA = \"${sha}\"`);s=s.replace(/APP_VERSION\\s*=\\s*\"[^\"]*\"/g,`APP_VERSION = \"${ver}\"`);fs.writeFileSync('wrangler.toml',s);"
       - run: npx wrangler deploy --env production
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN_PRODUCTION }}
