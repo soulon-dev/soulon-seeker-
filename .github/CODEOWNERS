@@ -1,0 +1,6 @@
+* @soulon-dev/core
+
+/.github/workflows/deploy-production.yml @soulon-dev/ops
+/.github/workflows/rollback-production.yml @soulon-dev/ops
+
+/backend/wrangler.toml @soulon-dev/ops
