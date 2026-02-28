@@ -588,7 +588,8 @@ export default {
         response = jsonResponse({
           status: 'ok',
           service: 'Soulon Backend',
-          version: '1.0.0',
+          version: env.APP_VERSION || 'unknown',
+          gitSha: env.GIT_SHA || null,
           environment: env.ENVIRONMENT,
           timestamp: new Date().toISOString(),
           adminEndpoint: '/admin',

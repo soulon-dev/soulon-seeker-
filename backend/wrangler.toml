@@ -9,30 +9,58 @@ workers_dev = true
 
 # 开发环境
 [env.dev]
-vars = { ENVIRONMENT = "development", SOLANA_CLUSTER = "devnet", SOLANA_RPC_URL = "https://api.devnet.solana.com", SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw", GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC", ATTESTATION_VALIDITY_HOURS = "24", CF_ACCESS_TEAM_NAME = "soulon", CORS_ALLOWED_ORIGINS = "", ADMIN_CORS_ALLOWED_ORIGINS = "https://a9f3k2p7x1z8-admin.soulon.top" }
+vars = { ENVIRONMENT = "dev", SOLANA_CLUSTER = "devnet", SOLANA_RPC_URL = "https://api.devnet.solana.com", SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw", GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC", ATTESTATION_VALIDITY_HOURS = "24", CF_ACCESS_TEAM_NAME = "soulon", CORS_ALLOWED_ORIGINS = "", ADMIN_CORS_ALLOWED_ORIGINS = "" , APP_VERSION = "0.0.0-SNAPSHOT", GIT_SHA = "" }
 
 [[env.dev.kv_namespaces]]
 binding = "KV"
-id = "c458c798497a494f9e64f6ab25457d3c"
+id = "REPLACE_WITH_DEV_KV_ID"
 
 [[env.dev.d1_databases]]
 binding = "DB"
-database_name = "soulon"
-database_id = "cacce054-7de3-4aeb-8617-f98a5b0bf5fa"
+database_name = "soulon-dev"
+database_id = "REPLACE_WITH_DEV_D1_ID"
+
+# 测试环境
+[env.test]
+vars = { ENVIRONMENT = "test", SOLANA_CLUSTER = "devnet", SOLANA_RPC_URL = "https://api.devnet.solana.com", SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw", GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC", ATTESTATION_VALIDITY_HOURS = "24", CF_ACCESS_TEAM_NAME = "soulon", CORS_ALLOWED_ORIGINS = "", ADMIN_CORS_ALLOWED_ORIGINS = "", APP_VERSION = "0.0.0-SNAPSHOT", GIT_SHA = "" }
+routes = ["api-test.soulon.top/*", "privacy-test.soulon.top/*"]
+
+[[env.test.kv_namespaces]]
+binding = "KV"
+id = "REPLACE_WITH_TEST_KV_ID"
+
+[[env.test.d1_databases]]
+binding = "DB"
+database_name = "soulon-test"
+database_id = "REPLACE_WITH_TEST_D1_ID"
+
+# 预发布环境
+[env.staging]
+vars = { ENVIRONMENT = "staging", SOLANA_CLUSTER = "mainnet-beta", SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw", GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC", ATTESTATION_VALIDITY_HOURS = "24", CF_ACCESS_TEAM_NAME = "soulon", CORS_ALLOWED_ORIGINS = "", ADMIN_CORS_ALLOWED_ORIGINS = "", APP_VERSION = "0.0.0-rc.0", GIT_SHA = "" }
+routes = ["api-staging.soulon.top/*", "privacy-staging.soulon.top/*"]
+
+[[env.staging.kv_namespaces]]
+binding = "KV"
+id = "REPLACE_WITH_STAGING_KV_ID"
+
+[[env.staging.d1_databases]]
+binding = "DB"
+database_name = "soulon-staging"
+database_id = "REPLACE_WITH_STAGING_D1_ID"
 
 # 生产环境
 [env.production]
-vars = { ENVIRONMENT = "production", SOLANA_CLUSTER = "mainnet-beta", SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw", GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC", ATTESTATION_VALIDITY_HOURS = "24", CF_ACCESS_TEAM_NAME = "soulon", CORS_ALLOWED_ORIGINS = "", ADMIN_CORS_ALLOWED_ORIGINS = "https://a9f3k2p7x1z8-admin.soulon.top" }
+vars = { ENVIRONMENT = "production", SOLANA_CLUSTER = "mainnet-beta", SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw", GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC", ATTESTATION_VALIDITY_HOURS = "24", CF_ACCESS_TEAM_NAME = "soulon", CORS_ALLOWED_ORIGINS = "", ADMIN_CORS_ALLOWED_ORIGINS = "https://a9f3k2p7x1z8-admin.soulon.top", APP_VERSION = "1.0.0", GIT_SHA = "" }
 routes = ["api.soulon.top/*", "privacy.soulon.top/*"]
 
 [[env.production.kv_namespaces]]
 binding = "KV"
-id = "c458c798497a494f9e64f6ab25457d3c"
+id = "REPLACE_WITH_PROD_KV_ID"
 
 [[env.production.d1_databases]]
 binding = "DB"
-database_name = "soulon"
-database_id = "cacce054-7de3-4aeb-8617-f98a5b0bf5fa"
+database_name = "soulon-production"
+database_id = "REPLACE_WITH_PROD_D1_ID"
 
 [[env.production.r2_buckets]]
 binding = "SHIP_METADATA"

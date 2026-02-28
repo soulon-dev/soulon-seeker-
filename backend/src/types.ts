@@ -19,6 +19,8 @@ export interface Env {
   ATTESTATION_VALIDITY_HOURS: string;
   JWT_SECRET?: string;
   ENVIRONMENT: string;
+  APP_VERSION?: string;
+  GIT_SHA?: string;
   
   // Secrets (新增)
   QWEN_API_KEY?: string; // 从 Secrets 读取
