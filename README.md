@@ -36,3 +36,7 @@ npm test
 ## Notes
 
 - Firebase config is optional and not committed. Use `app/google-services.json.example` for local setup if needed.
+
+## Engineering
+
+- Full SDLC guide: `SDLC_GUIDE.md`
