@@ -2,7 +2,10 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp") version "1.9.22-1.0.17"
-    id("com.google.gms.google-services")
+}
+
+if (file("google-services.json").exists()) {
+    apply(plugin = "com.google.gms.google-services")
 }
 
 android {
@@ -52,8 +55,6 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            buildConfigField("String", "BACKEND_BASE_URL", "\"https://api.soulon.top\"")
-            buildConfigField("String", "NEGOTIATION_BASE_URL", "\"https://api.soulon.top\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -63,6 +64,27 @@ android {
         debug {
             isDebuggable = true
             isMinifyEnabled = false
+        }
+    }
+
+    flavorDimensions += "env"
+    productFlavors {
+        create("dev") {
+            dimension = "env"
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-SNAPSHOT"
+            buildConfigField("String", "BACKEND_BASE_URL", "\"https://api-test.soulon.top\"")
+            buildConfigField("String", "NEGOTIATION_BASE_URL", "\"https://api-test.soulon.top\"")
+        }
+        create("staging") {
+            dimension = "env"
+            applicationIdSuffix = ".staging"
+            versionNameSuffix = "-rc.0"
+            buildConfigField("String", "BACKEND_BASE_URL", "\"https://api-staging.soulon.top\"")
+            buildConfigField("String", "NEGOTIATION_BASE_URL", "\"https://api-staging.soulon.top\"")
+        }
+        create("prod") {
+            dimension = "env"
             buildConfigField("String", "BACKEND_BASE_URL", "\"https://api.soulon.top\"")
             buildConfigField("String", "NEGOTIATION_BASE_URL", "\"https://api.soulon.top\"")
         }
