@@ -1,0 +1,11 @@
+org.gradle.jvmargs=-Xmx4096m -Dfile.encoding=UTF-8
+org.gradle.parallel=true
+org.gradle.caching=true
+
+android.useAndroidX=true
+kotlin.code.style=official
+
+RELEASE_STORE_FILE=/path/to/your-release.keystore
+RELEASE_STORE_PASSWORD=REPLACE_ME
+RELEASE_KEY_ALIAS=REPLACE_ME
+RELEASE_KEY_PASSWORD=REPLACE_ME
