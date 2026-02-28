@@ -84,7 +84,7 @@ bucket_name = "seeker-ship-metadata"
 
 [[kv_namespaces]]
 binding = "KV"
-id = "c458c798497a494f9e64f6ab25457d3c"
+id = "REPLACE_WITH_DEFAULT_KV_ID"
 
 # ============================================
 # D1 数据库
@@ -95,8 +95,8 @@ id = "c458c798497a494f9e64f6ab25457d3c"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "soulon"
-database_id = "cacce054-7de3-4aeb-8617-f98a5b0bf5fa"
+database_name = "soulon-default"
+database_id = "REPLACE_WITH_DEFAULT_D1_ID"
 
 # ============================================
 # R2 存储桶
@@ -117,14 +117,17 @@ database_id = "cacce054-7de3-4aeb-8617-f98a5b0bf5fa"
 # wrangler secret put CF_ACCESS_AUD
 
 [vars]
-ENVIRONMENT = "production"
-SOLANA_CLUSTER = "mainnet-beta"
+ENVIRONMENT = "dev"
+SOLANA_CLUSTER = "devnet"
 SUBSCRIPTION_PROGRAM_ID = "8QvxLBAptKNf4JMnVpt27noDnEwKHq4VNz1UDidGYxKw"
 GENESIS_TOKEN_COLLECTION = "46pcSL5gmjBrPqGKFaLbbCmR6iVuLJbnQy13hAe7s6CC"
 ATTESTATION_VALIDITY_HOURS = "24"
 CF_ACCESS_TEAM_NAME = "soulon"
 CORS_ALLOWED_ORIGINS = ""
 ADMIN_CORS_ALLOWED_ORIGINS = "https://a9f3k2p7x1z8-admin.soulon.top"
+
+APP_VERSION = "0.0.0-SNAPSHOT"
+GIT_SHA = ""
 
 # ============================================
 # 定时任务 (Cron Triggers)
