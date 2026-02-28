@@ -2,6 +2,8 @@
 
 This repository contains the Android app and the Cloudflare Workers backend for the Soulon hackathon submission.
 
+This repo is for the hackathon submission only. The production codebase and deployment workflow live in https://github.com/soulon-dev/Official.
+
 ## Contents
 
 - `app/`: Android application
